@@ -22,3 +22,5 @@
 - version 1.0.3
   - Fake Data Edited
   - New branch added (dev) - Explore
+  - Images added
+  - Footer added and table responsive
