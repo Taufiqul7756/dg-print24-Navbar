@@ -20,7 +20,11 @@
   - NextUI Table explore by FakeData
 
 - version 1.0.3
+
   - Fake Data Edited
   - New branch added (dev) - Explore
   - Images added
   - Footer added and table responsive
+
+- version 1.0.3
+- Footer added and table responsiveuyhvguybg8bbbb
