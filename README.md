@@ -26,5 +26,5 @@
   - Images added
   - Footer added and table responsive
 
-- version 1.0.3
+- version 1.0.3 (1)
 - Footer added and table responsiveuyhvguybg8bbbb
