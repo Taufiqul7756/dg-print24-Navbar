@@ -8,3 +8,4 @@
 - version 1.0.1
   - Day - 03-08-2024
   - Navbar - 1st section (LogoBar) Done
+  - Navbar - 2nd section (All Products navitems) Done

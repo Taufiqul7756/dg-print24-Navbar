@@ -16,11 +16,22 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
+  Divider,
+  Modal,
+  ModalContent,
+  ModalBody,
 } from "@nextui-org/react";
 
 import Image from "next/image.js";
 import { CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
+import { MdVerticalDistribute } from "react-icons/md";
+import { FaBookOpenReader } from "react-icons/fa6";
+import { MdOutlineEmail } from "react-icons/md";
+import { PiChatsThin } from "react-icons/pi";
+import { TfiHeadphone } from "react-icons/tfi";
+import { RiMenu4Fill } from "react-icons/ri";
+import { FaChevronDown } from "react-icons/fa6";
 
 import logo from "../../../../public/logo.png";
 
@@ -84,6 +95,7 @@ export default function NavbarComponent() {
                         size="md"
                         radius="sm"
                         className="border-none"
+                        onClick={() => setUserData(userData)}
                       >
                         RESOURCES
                       </Button>
@@ -117,7 +129,143 @@ export default function NavbarComponent() {
                   </Button>
                 </>
               )}
+              {/* check login user - Logout Button Show  */}
+              {userData && (
+                <>
+                  <Dropdown>
+                    <DropdownTrigger>
+                      <Button
+                        variant="ghost"
+                        size="md"
+                        radius="sm"
+                        className="border-none"
+                      >
+                        RESOURCES
+                      </Button>
+                    </DropdownTrigger>
+                    <DropdownMenu aria-label="Static Actions">
+                      <DropdownItem key="templates">Templates</DropdownItem>
+                      <DropdownItem key="blog">Blog</DropdownItem>
+                      <DropdownItem key="university">University</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+
+                  <Button
+                    variant="bordered"
+                    size="md"
+                    radius="sm"
+                    disableRipple
+                    className="hidden md:flex md:justify-center border-[#ED1F24] hover:bg-[#ED1F24] hover:text-white"
+                    // onClick={onOpenModal2}
+                    onClick={() => setUserData(!userData)}
+                  >
+                    LOGOUT
+                  </Button>
+                  {/* <Button
+                    variant="bordered"
+                    size="md"
+                    radius="sm"
+                    disableRipple
+                    className="bg-black text-white border-none hover:bg-[#ED1F24] hover:text-white"
+                    // onClick={onOpenModal2}
+                  >
+                    REGISTER FOR FREE
+                  </Button> */}
+                </>
+              )}
             </NavbarItem>
+          </div>
+        </div>
+        <Divider className="mx-[100%]" />
+
+        <div>
+          <div className=" absolute left-0 bg-black w-full h-10"></div>
+          <div className=" w-full flex flex-row gap-2 justify-center px-1">
+            <div id="allProducts">
+              <Button
+                disableRipple
+                disableAnimation
+                radius="none"
+                variant="light"
+                endContent={<FaChevronDown className="animate-pulse" />}
+                // onClick={onOpen}
+                className="text-white"
+              >
+                All Products
+              </Button>
+              <Modal
+                // isOpen={isOpen}
+                // onOpenChange={onOpenChange}
+                size="5xl"
+                placement="top"
+                backdrop="opaque"
+                radius="none"
+                disableAnimation
+              >
+                {/* <ModalContent>
+                  <ModalBody className="grid grid-cols-4">
+                    {allProducts.map((category, index) => (
+                      <div key={index}>
+                        <p className=" text-lg font-extrabold">
+                          {category.categoryname}
+                        </p>
+                        {category.products.map((product, i) => (
+                          <Link
+                            href={`/category/${category.categoryId}/${product.productId}`}
+                            key={i}
+                          >
+                            <p className="text-black">{product.label}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </ModalBody>
+                </ModalContent> */}
+              </Modal>
+            </div>
+
+            {/* <div className="flex flex-row gap-2 justify-items-center items-center">
+              {allProducts.slice(0, 5).map((category, index) => (
+                <Dropdown radius="none" key={index}>
+                  <DropdownTrigger>
+                    <Button
+                      disableRipple
+                      disableAnimation
+                      radius="none"
+                      variant="light"
+                      // endContent={<FaChevronDown className="animate-pulse" />}
+                      className="text-white"
+                    >
+                      {index === 0 && (
+                        <div className="border-l h-6 border-white"></div>
+                      )}
+                      <div className="text-sm text-wrap flex gap-2 justify-items-center items-center">
+                        {category.categoryname}
+                        <span className="">
+                          <FaChevronDown className="animate-pulse" />
+                        </span>
+                      </div>
+                      {index < 4 && (
+                        <div className="border-r h-6 border-white"></div>
+                      )}
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu
+                    aria-label="Static Actions"
+                    className="max-h-60 overflow-y-auto"
+                  >
+                    {category.products.map((item, i) => (
+                      <DropdownItem
+                        key={i}
+                        href={`/category/${category.categoryId}/${item.productId}`}
+                      >
+                        {item.label}
+                      </DropdownItem>
+                    ))}
+                  </DropdownMenu>
+                </Dropdown>
+              ))}
+            </div> */}
           </div>
         </div>
       </NavbarContent>
