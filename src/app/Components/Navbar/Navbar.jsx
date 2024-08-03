@@ -49,8 +49,17 @@ export default function NavbarComponent() {
     onOpenChange: onOpenChangeModal2,
   } = useDisclosure();
 
+  const toggleExpanded = () => {
+    setExpanded((prevExpanded) => !prevExpanded);
+  };
+
   return (
-    <Navbar maxWidth="2xl" height={"11rem"} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      maxWidth="2xl"
+      height={"11rem"}
+      onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll
+    >
       <NavbarContent className=" hidden lg:flex flex-col py-2 ">
         <div className="grid grid-cols-4 place-items-center w-full lg:pl-0">
           <NavbarBrand>

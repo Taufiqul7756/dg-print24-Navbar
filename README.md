@@ -16,3 +16,4 @@
   - Navbar - 2nd section (All Products navitems) Done
   - Navbar - 3nd section (Ticket navitems) Done
   - responsive for md and sm ( Fake data not loaded yet)
+  - NextUI Table explore by FakeData
