@@ -27,4 +27,8 @@
   - Footer added and table responsive
 
 - version 1.0.3 (1)
+
+  - Footer added and table responsiveuyhvguybg8bbbbddddd
+
+- version 1.0.3 ( dev push 2)
   - Footer added and table responsiveuyhvguybg8bbbbddddd
