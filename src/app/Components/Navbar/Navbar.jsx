@@ -59,9 +59,10 @@ export default function NavbarComponent() {
       height={"11rem"}
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
+      className=""
     >
-      <NavbarContent className=" hidden lg:flex flex-col py-2 ">
-        <div className="grid grid-cols-4 place-items-center w-full lg:pl-0">
+      <NavbarContent className=" hidden lg:flex flex-col py-2  ">
+        <div className="grid grid-cols-4 w-full gap-10 items-center lg:pl-0">
           <NavbarBrand>
             <Link href="/" color="foreground">
               <Image
@@ -72,7 +73,7 @@ export default function NavbarComponent() {
                 alt="Tech analytica's logo"
                 radius="none"
                 // isBlurred={false}
-                // className="w-24 sm:w-36 md:w-48"
+                className="w-24 sm:w-36 md:w-48"
               />
             </Link>
           </NavbarBrand>
@@ -90,97 +91,100 @@ export default function NavbarComponent() {
           />
 
           {/* -------------- Login or logout -------------- */}
-          <div className=" w-[50%] flex flex-row gap-2 justify-between items-center">
-            <Button
-              href="/cart"
-              as={Link}
-              isIconOnly
-              variant="light"
-              disableRipple
-              size="lg"
-              className="hidden md:flex md:justify-center"
-            >
-              <IoCartOutline size={28} />
-            </Button>
+          <div className="flex flex-row gap-5 justify-between items-center">
+            <div>
+              <Button
+                href="/cart"
+                as={Link}
+                isIconOnly
+                variant="light"
+                disableRipple
+                size="lg"
+                className="hidden md:flex md:justify-center"
+              >
+                <IoCartOutline size={28} />
+              </Button>
+            </div>
 
-            <NavbarItem className="flex flex-row gap-1">
-              {/* check login user - Login Button Show  */}
-              {!userData && (
-                <>
-                  <Dropdown>
-                    <DropdownTrigger>
-                      <Button
-                        variant="ghost"
-                        size="md"
-                        radius="sm"
-                        className="border-none"
-                        onClick={() => setUserData(userData)}
-                      >
-                        RESOURCES
-                      </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Static Actions">
-                      <DropdownItem key="templates">Templates</DropdownItem>
-                      <DropdownItem key="blog">Blog</DropdownItem>
-                      <DropdownItem key="university">University</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
+            <div>
+              <NavbarItem className="flex flex-row gap-1">
+                {/* check login user - Login Button Show  */}
+                {!userData && (
+                  <>
+                    <Dropdown>
+                      <DropdownTrigger>
+                        <Button
+                          variant="ghost"
+                          size="md"
+                          radius="sm"
+                          className="border-none"
+                          onClick={() => setUserData(userData)}
+                        >
+                          RESOURCES
+                        </Button>
+                      </DropdownTrigger>
+                      <DropdownMenu aria-label="Static Actions">
+                        <DropdownItem key="templates">Templates</DropdownItem>
+                        <DropdownItem key="blog">Blog</DropdownItem>
+                        <DropdownItem key="university">University</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
 
-                  <Button
-                    variant="bordered"
-                    size="md"
-                    radius="sm"
-                    disableRipple
-                    className="hidden md:flex md:justify-center border-[#ED1F24] hover:bg-[#ED1F24] hover:text-white"
-                    onClick={onOpenModal2}
-                  >
-                    LOGIN
-                  </Button>
-                  <Button
-                    variant="bordered"
-                    size="md"
-                    radius="sm"
-                    disableRipple
-                    className="bg-black text-white border-none hover:bg-[#ED1F24] hover:text-white"
-                    onClick={onOpenModal2}
-                  >
-                    REGISTER FOR FREE
-                  </Button>
-                </>
-              )}
-              {/* check login user - Logout Button Show  */}
-              {userData && (
-                <>
-                  <Dropdown>
-                    <DropdownTrigger>
-                      <Button
-                        variant="ghost"
-                        size="md"
-                        radius="sm"
-                        className="border-none"
-                      >
-                        RESOURCES
-                      </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Static Actions">
-                      <DropdownItem key="templates">Templates</DropdownItem>
-                      <DropdownItem key="blog">Blog</DropdownItem>
-                      <DropdownItem key="university">University</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
+                    <Button
+                      variant="bordered"
+                      size="md"
+                      radius="sm"
+                      disableRipple
+                      className="hidden md:flex md:justify-center border-[#ED1F24] hover:bg-[#ED1F24] hover:text-white"
+                      onClick={onOpenModal2}
+                    >
+                      LOGIN
+                    </Button>
+                    <Button
+                      variant="bordered"
+                      size="md"
+                      radius="sm"
+                      disableRipple
+                      className="bg-black text-white border-none hover:bg-[#ED1F24] hover:text-white"
+                      onClick={onOpenModal2}
+                    >
+                      REGISTER FOR FREE
+                    </Button>
+                  </>
+                )}
+                {/* check login user - Logout Button Show  */}
+                {userData && (
+                  <>
+                    <Dropdown>
+                      <DropdownTrigger>
+                        <Button
+                          variant="ghost"
+                          size="md"
+                          radius="sm"
+                          className="border-none"
+                        >
+                          RESOURCES
+                        </Button>
+                      </DropdownTrigger>
+                      <DropdownMenu aria-label="Static Actions">
+                        <DropdownItem key="templates">Templates</DropdownItem>
+                        <DropdownItem key="blog">Blog</DropdownItem>
+                        <DropdownItem key="university">University</DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
 
-                  <Button
-                    variant="bordered"
-                    size="md"
-                    radius="sm"
-                    disableRipple
-                    className="hidden md:flex md:justify-center border-[#ED1F24] hover:bg-[#ED1F24] hover:text-white"
-                    // onClick={onOpenModal2}
-                    onClick={() => setUserData(!userData)}
-                  >
-                    LOGOUT
-                  </Button>
-                  {/* <Button
+                    <Button
+                      variant="bordered"
+                      size="md"
+                      radius="sm"
+                      disableRipple
+                      className="hidden md:flex md:justify-center border-[#ED1F24] hover:bg-[#ED1F24] hover:text-white"
+                      // onClick={onOpenModal2}
+                      onClick={() => setUserData(!userData)}
+                    >
+                      LOGOUT
+                    </Button>
+                    {/* <Button
                     variant="bordered"
                     size="md"
                     radius="sm"
@@ -190,9 +194,10 @@ export default function NavbarComponent() {
                   >
                     REGISTER FOR FREE
                   </Button> */}
-                </>
-              )}
-            </NavbarItem>
+                  </>
+                )}
+              </NavbarItem>
+            </div>
           </div>
         </div>
         <Divider className="mx-[100%]" />
