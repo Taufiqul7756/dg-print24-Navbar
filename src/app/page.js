@@ -9,7 +9,6 @@ export default function HomePage() {
     >
       <TableComponent />
       <TableComponent />
-      <TableComponent />
     </main>
   );
 }

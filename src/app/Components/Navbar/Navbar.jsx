@@ -61,7 +61,7 @@ export default function NavbarComponent() {
       shouldHideOnScroll
       className=""
     >
-      <NavbarContent className=" hidden lg:flex flex-col py-2  ">
+      <NavbarContent className=" hidden lg:flex flex-col py-2">
         <div className="grid grid-cols-4 w-full gap-10 items-center lg:pl-0">
           <NavbarBrand>
             <Link href="/" color="foreground">
@@ -91,7 +91,7 @@ export default function NavbarComponent() {
           />
 
           {/* -------------- Login or logout -------------- */}
-          <div className="flex flex-row gap-5 justify-between items-center">
+          <div className="flex flex-row gap-32 justify-between items-center">
             <div>
               <Button
                 href="/cart"
@@ -107,7 +107,7 @@ export default function NavbarComponent() {
             </div>
 
             <div>
-              <NavbarItem className="flex flex-row gap-1">
+              <NavbarItem className="flex flex-row gap-10">
                 {/* check login user - Login Button Show  */}
                 {!userData && (
                   <>

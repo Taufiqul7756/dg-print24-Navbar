@@ -85,7 +85,7 @@ export default function TableComponent() {
   }, []);
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mb-5">
       <Table
         aria-label="Example table with custom cells"
         className="sm:text-xs sm:px-2"
