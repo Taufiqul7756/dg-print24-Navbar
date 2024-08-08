@@ -24,4 +24,4 @@
   - Fake Data Edited
   - New branch added (dev) - Explore
   - Images added
-  - Footer added and table responsive
+  - Footer added and table responsive.
